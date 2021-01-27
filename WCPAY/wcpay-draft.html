@@ -1,0 +1,120 @@
+<html>
+<head>
+	<style>
+		#step1 { 
+			position:relative;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top:50px;
+			transform:scale(0.5,0.5);
+			}
+		#brand { 
+			display: inline;
+			vertical-align:bottom;
+			margin:0;
+			border:0;
+			padding:0;
+			transform:scale(1,0.9);
+			}
+		#brname { 
+			display: inline;	
+			margin:0;
+			border:0;
+			padding:0;
+			font-family:sans-serif;
+			font-size:50px;
+			color:white;
+			}
+		#div1{
+			background-color:powderblue;
+			}
+		.stepbut{
+			border:none;
+			}
+		.divideo{
+			position:absolute;
+			top: 250px;
+			left: 800px;
+			}
+		video{
+			position:relative;
+			width:500px;
+			}
+		.divideo > span{
+			font-size:20px;
+			}
+		a{
+			position:absolute;
+			left: 100px;
+			top: 700px;
+			}		
+	
+	</style>
+</head>
+
+<body>
+	<div id = "div1">
+		<img id = "brand" src="img\brand.png"></img>
+		<span id="brname">Instruction</span>		
+	</div>
+
+	
+	<div style= "position:absolute; left:100px;top:250px;">
+	<span style = "font-family:sans-serif;font-size:20px;">In this instruction manual, you will learn:
+	</span>
+	<br> <br>
+	<span style = "font-family:sans-serif;font-size:15px;">1.how to get your WeChat wallet ready <br> 
+	   2.make a payment by scanning the QR code <br>
+	   3.make a payment by showing the QR code <br>	<br>
+	</span>
+	
+	
+	<button onClick = "b1onClick()"class = "stepbut">Get Wallet Ready</button>
+	<br><br>
+	<button onClick = "b2onClick()" class = "stepbut">Scan the Vendor </button>
+	<br><br>
+	<button onClick = "b3onClick()" class = "stepbut">Receive Money</button>
+	</div>
+	<div class = "divideo" id = "v1" >
+		<video controls src = "vid\getreadyV.mp4"></video>
+	</div>
+	<div class = "divideo" id = "v2" style = "display:none;" >
+		<video controls src = "vid\scanV.mp4"></video>
+	</div>
+	<div class = "divideo" id = "v3" style = "display:none;" >
+		<video controls src = "vid\recV.mp4"></video>
+	</div>
+	
+<a href="https://pay.weixin.qq.com/wechatpay_guide/intro_method.shtml" target = "blank">More information about WeChat pay</a>
+
+</body>
+
+<script>
+	function b1onClick(){
+		document.getElementById("v2").style.display = "none";
+		document.getElementById("v2").childNodes[5].pause();
+		document.getElementById("v3").style.display = "none";
+		document.getElementById("v3").childNodes[5].pause();
+		document.getElementById("v1").style.display = "block";
+		return 0;
+	}	
+	function b2onClick(){
+		document.getElementById("v2").style.display = "block";
+		document.getElementById("v3").style.display = "none";
+		document.getElementById("v3").childNodes[5].pause();
+		document.getElementById("v1").style.display = "none";
+		document.getElementById("v1").childNodes[5].pause();
+		
+		return 0;
+	}
+	function b3onClick(){
+		document.getElementById("v1").style.display = "none";
+		document.getElementById("v1").childNodes[5].pause();
+		document.getElementById("v2").style.display = "none";
+		document.getElementById("v2").childNodes[5].pause();
+		document.getElementById("v3").style.display = "block";
+		return 0;
+	}
+</script>
+</html>
